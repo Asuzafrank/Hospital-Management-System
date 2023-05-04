@@ -1,0 +1,28 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "first_Name": "john",
+      "last_Name": "Doe",
+      "email": "john@gmail.com",
+      "phone_number": "0773721921",
+      "location": "kensas",
+      "registration_number": "khjs678",
+      "law_firm": "wahongo advocates",
+      "password": "john123",
+      "confirm_password": "john123"
+    },
+    {
+      "first_name": "frankline",
+      "last_name": "asuza",
+      "email": "frank@gmail.com",
+      "phone_number": 703672667,
+      "location": "Nairobi",
+      "registration_number": "hjd27734",
+      "law_firm": "supreme",
+      "password": "frank123",
+      "confirm_password": "frank123",
+      "id": 2
+    }
+  ]
+}
