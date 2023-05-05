@@ -1,7 +1,7 @@
 <template>
   <div class="container">
     <div class="row">
-      <div class="imagery col-sm-4">
+      <div class="imagery col-md-6 col-lg-4">
         <div class="logo">
           <h1 class="abb">M.R</h1>
           <p>MedAssets Recovery</p>
@@ -21,7 +21,7 @@
           <a class="act" href="">E-sign disclosure act</a>
         </div>
       </div>
-      <div class="info-data col-sm-8">
+      <div class="info-data col-md-6 col-lg-8">
         <div class="reg-info">
           <h3>Register</h3>
           <span class="login-redirect"

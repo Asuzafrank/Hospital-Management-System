@@ -25,7 +25,9 @@
         <div class="reg-info">
           <h3>Login</h3>
           <span class="login-redirect"
-            >Don't Have An Account?<a href="">Sign-up</a>
+            >Don't Have An Account?<router-link to="/register" href=""
+              >Sign-up</router-link
+            >
           </span>
         </div>
         <hr />

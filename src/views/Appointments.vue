@@ -19,12 +19,12 @@
             novalidate="novalidate"
           >
             <!-- Form Select -->
-            <div id="input-department" class="input-department">
+            <div id="input-department">
               <select
                 id="inlineFormCustomSelect"
                 name="department"
                 class="custom-select mt-3"
-                required=""
+                v-model="dept"
               >
                 <option value="">Select Department</option>
                 <option>Pediatrics Department</option>
@@ -39,12 +39,12 @@
             </div>
 
             <!-- Form Select -->
-            <div id="input-doctor" class="">
+            <div id="input-doctor">
               <select
                 id="inlineFormCustomSelect"
                 name="doctor"
                 class="custom-select mt-3"
-                required=""
+                v-model="doctor"
               >
                 <option value="">Select Doctor</option>
                 <option>Jonathan Barnes D.M.</option>
@@ -57,12 +57,12 @@
             </div>
 
             <!-- Form Select -->
-            <div id="input-patient" class="input-patient">
+            <div id="input-patient">
               <select
                 id="inlineFormCustomSelect"
                 name="patient"
                 class="custom-select mt-3"
-                required=""
+                v-model="patient"
               >
                 <option value="">Have You Visited Us Before?*</option>
                 <option>New Patient</option>
@@ -72,67 +72,71 @@
             </div>
 
             <!-- Contact Form Input -->
-            <div id="input-date" class="">
+            <div id="input-date">
               <input
                 id="datetimepicker"
                 type="date"
                 name="date"
                 class="form-control date"
                 placeholder="Appointment Date"
-                required=""
+                v-model="date"
               />
             </div>
 
             <!-- Contact Form Input -->
-            <div id="input-name" class="">
+            <div id="input-name">
               <input
                 type="text"
                 name="name"
                 class="form-control name"
                 placeholder="Enter Your Name*"
+                v-model="name"
               />
             </div>
 
-            <div id="input-email" class="">
+            <div id="input-email">
               <input
                 type="text"
                 name="email"
                 class="form-control email"
                 placeholder="Enter Your Email*"
+                v-model="email"
               />
             </div>
 
-            <div id="input-phone" class="">
+            <div id="input-phone">
               <input
                 type="tel"
                 name="phone"
                 class="form-control phone"
                 placeholder="Enter Your Phone Number*"
+                v-model="phone"
               />
             </div>
 
-            <div id="input-message" class="input-message">
+            <div id="input-message">
               <textarea
                 class="form-control mt-3"
                 name="message"
                 rows="6"
                 placeholder="Your Message ..."
+                v-model="message"
               ></textarea>
             </div>
 
             <!-- Contact Form Button -->
-            <div class="form-btn">
-              <button
-                type="submit"
-                style="width: 100%"
-                class="btn btn-primary mt-3"
-              >
-                Request an Appointment
-              </button>
-            </div>
 
             <!-- Contact Form Message -->
           </form>
+          <div>
+            <button
+              @click="requestAppointment"
+              style="width: 100%"
+              class="btn btn-primary mt-3"
+            >
+              Request an Appointment
+            </button>
+          </div>
         </div>
         <div class="col-lg-4">
           <h4>The Heart Of Clinic</h4>
@@ -203,6 +207,7 @@
   <Footer />
 </template>
 <script>
+import axios from "axios";
 import Header from "../components/Header.vue";
 import Footer from "../components/Footer.vue";
 export default {
@@ -210,6 +215,65 @@ export default {
   components: {
     Header,
     Footer,
+  },
+  data() {
+    return {
+      dept: "",
+      doctor: "",
+      patient: "",
+      date: "",
+      name: "",
+      email: "",
+      phone: "",
+      message: "",
+      user_id: null,
+    };
+  },
+  methods: {
+    getUserID() {
+      const userInfo = JSON.parse(localStorage.getItem("user.info"));
+      if (userInfo) {
+        return userInfo.id;
+      }
+      return null;
+    },
+
+    async requestAppointment() {
+      if (
+        !this.dept ||
+        !this.doctor ||
+        !this.patient ||
+        !this.date ||
+        !this.name ||
+        !this.email ||
+        !this.phone ||
+        !this.message
+      ) {
+        alert("Please fill in all required fields.");
+        return;
+      }
+      const userId = this.getUserID();
+      if (!userId) {
+        alert("Please log in to make a booking.");
+        this.$router.push({ name: "login" });
+        return;
+      }
+      const data = {
+        department: this.dept,
+        selected_doctor: this.doctor,
+        patient: this.patient,
+        date: this.date,
+        name: this.name,
+        email: this.email,
+        phone: this.phone,
+        message: this.message,
+        user_id: userId,
+      };
+      const result = await axios.post("http://localhost:3000/bookings", data);
+      if (result.status === 201) {
+        this.$router.push({ name: "bookings" });
+      }
+    },
   },
 };
 </script>

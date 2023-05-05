@@ -32,7 +32,9 @@
             >
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Features</a>
+            <router-link to="/bookings" class="nav-link" href="#"
+              >appointments</router-link
+            >
           </li>
           <li class="nav-item">
             <router-link to="/login" class="nav-link" href="#"

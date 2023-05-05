@@ -1,5 +1,6 @@
 <template>
   <Header />
+
   <section id="hero-1" class="top">
     <div class="container">
       <div class="row d-flex align-items-center">

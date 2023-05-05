@@ -1,28 +1,78 @@
 {
   "users": [
     {
-      "id": 1,
-      "first_Name": "john",
-      "last_Name": "Doe",
-      "email": "john@gmail.com",
-      "phone_number": "0773721921",
-      "location": "kensas",
-      "registration_number": "khjs678",
-      "law_firm": "wahongo advocates",
-      "password": "john123",
-      "confirm_password": "john123"
-    },
-    {
       "first_name": "frankline",
-      "last_name": "asuza",
+      "last_name": "amiani",
       "email": "frank@gmail.com",
-      "phone_number": 703672667,
+      "phone_number": 254787823979,
       "location": "Nairobi",
-      "registration_number": "hjd27734",
-      "law_firm": "supreme",
+      "registration_number": "kju8932",
+      "law_firm": "Saliku",
       "password": "frank123",
       "confirm_password": "frank123",
+      "id": 1
+    },
+    {
+      "first_name": "selin ",
+      "last_name": "nyawina",
+      "email": "selin@gmail.com",
+      "phone_number": 254729772891,
+      "location": "mombasa",
+      "registration_number": "kihs9872",
+      "law_firm": "Harvey",
+      "password": "selin123",
+      "confirm_password": "selin123",
       "id": 2
+    }
+  ],
+  "bookings": [
+    {
+      "department": "Neurology Department",
+      "selected_doctor": "Hannah Harper D.M.",
+      "patient": "New Patient",
+      "date": "2023-05-19",
+      "name": "frank",
+      "email": "frank@gmail.com",
+      "phone": "+254789379922",
+      "message": "Porta semper lacus cursus, and feugiat primis ultrice ligula at risus auctor",
+      "user_id": 1,
+      "id": 1
+    },
+    {
+      "department": "X-Ray Diagnostic Department",
+      "selected_doctor": "Joshua Elledge D.M.",
+      "patient": "New Patient",
+      "date": "2023-05-06",
+      "name": "selin",
+      "email": "selin@gmail.com",
+      "phone": "+37127892781",
+      "message": "An enim nullam tempor sapien at gravida donec pretium ipsum porta justo integer at odiovelna vitae auctor integer congue magna pur",
+      "user_id": 2,
+      "id": 2
+    },
+    {
+      "department": "Haematology Department",
+      "selected_doctor": "Hannah Harper D.M.",
+      "patient": "Returning Patient",
+      "date": "2023-05-30",
+      "name": "selin",
+      "email": "selin@gmail.com",
+      "phone": "+989129208912",
+      "message": "lorem ipsum corsa",
+      "user_id": 2,
+      "id": 3
+    },
+    {
+      "department": "MRI Department",
+      "selected_doctor": "Joshua Elledge D.M.",
+      "patient": "Returning Patient",
+      "date": "2023-05-20",
+      "name": "selin",
+      "email": "selin@gmail.com",
+      "phone": "+8873982378",
+      "message": "purca co",
+      "user_id": 2,
+      "id": 4
     }
   ]
 }

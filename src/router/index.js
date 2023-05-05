@@ -4,6 +4,7 @@ import RegistrationPage from "../views/RegistrationPage.vue";
 import LoginPage from "../views/LoginPage.vue";
 import HomeView from "../views/HomeView.vue";
 import Appointments from "../views/Appointments.vue";
+import Bookings from "../views/Bookings.vue";
 
 const routes = [
   {
@@ -25,6 +26,11 @@ const routes = [
     path: "/appointment",
     name: "appointments",
     component: Appointments,
+  },
+  {
+    path: "/bookings",
+    name: "bookings",
+    component: Bookings,
   },
 ];
 
